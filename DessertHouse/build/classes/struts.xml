@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="struts2"  namespace="/" extends="struts-default">
+
+
+		<action name="register" class="edu.nju.onlinestock.action.RegisterAction">
+
+			<result name="success" type="redirect">/jsp/index.jsp</result>
+
+			<result name="input" type="redirect">/jsp/register.jsp?error=1</result>
+			
+			<result name="exist" type="redirect">/jsp/register.jsp?error=2</result>
+			
+			<result name="run" type="redirect">/jsp/register.jsp?error=3</result>
+
+		</action>
+		
+		<action name="login" class="edu.nju.onlinestock.action.LoginAction">
+
+			<result name="member" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="waiter" type="redirect">/DessertHouse/sale</result>
+
+			<result name="input" type="redirect">/jsp/login.jsp?error=1</result>
+
+		</action>
+		
+		<action name="card" class="edu.nju.onlinestock.action.CardAction">
+
+			<result name="success" type="redirect">/DessertHouse/account</result>
+
+			<result name="input" type="redirect">/jsp/myaccount.jsp?error=1</result>
+			
+			<result name="money" type="redirect">/jsp/myaccount.jsp?error=2</result>
+			
+			<result name="card" type="redirect">/jsp/myaccount.jsp?error=3</result>
+
+		</action>
+		
+		<action name="account" class="edu.nju.onlinestock.action.AccountAction">
+
+			<result name="success" type="redirect">/jsp/myaccount.jsp</result>
+
+		</action>
+		
+		<action name="answer" class="edu.nju.onlinestock.action.AnswerAction">
+
+			<result name="success" type="redirect">/jsp/quiz.jsp</result>
+
+		</action>
+		
+		<action name="setanswer" class="edu.nju.onlinestock.action.SetanswerAction">
+
+			<result name="success" type="redirect">/DessertHouse/account</result>
+
+		</action>
+		
+		<action name="plan" class="edu.nju.onlinestock.action.PlanAction">
+
+			<result name="success" type="redirect">/jsp/plan.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="allowplan" class="edu.nju.onlinestock.action.AllowplanAction">
+
+			<result name="success" type="redirect">/jsp/allowplan.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="allowandalter" class="edu.nju.onlinestock.action.AllowandAlterAction">
+
+			<result name="success" type="redirect">/DessertHouse/allowplan</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="setplan" class="edu.nju.onlinestock.action.SetplanAction">
+
+			<result name="success" type="redirect">/DessertHouse/plan</result>
+			
+			<result name="input" type="redirect">/DessertHouse/plan?error=1</result>
+
+		</action>
+		
+		<action name="list" class="edu.nju.onlinestock.action.ListAction">
+
+			<result name="success" type="redirect">/jsp/list.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="sale" class="edu.nju.onlinestock.action.SaleAction">
+
+			<result name="success" type="redirect">/jsp/sale.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="transit" class="edu.nju.onlinestock.action.TransitAction">
+
+			<result name="success" type="redirect">/jsp/transit.jsp</result>
+
+		</action>
+		
+		<action name="seat" class="edu.nju.onlinestock.action.SeatAction">
+
+			<result name="success" type="redirect">/jsp/seat.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="login" type="redirect">/jsp/login.jsp</result>
+			
+			<result name="myaccount" type="redirect">/jsp/myaccount.jsp?error=4</result>
+			
+			<result name="nomoney" type="redirect">/DessertHouse/account</result>
+
+		</action>
+		
+		<action name="buy" class="edu.nju.onlinestock.action.BuyAction">
+
+			<result name="success" type="redirect">/jsp/success.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+			
+			<result name="login" type="redirect">/jsp/login.jsp</result>
+			
+			<result name="nomoney" type="redirect">/jsp/myaccount.jsp?error=5</result>
+
+		</action>
+		
+		<action name="movie" class="edu.nju.onlinestock.action.MovieAction">
+
+			<result name="success" type="redirect">/jsp/movie.jsp</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		
+		<action name="setmovie" class="edu.nju.onlinestock.action.SetmovieAction">
+
+			<result name="success" type="redirect">/DessertHouse/movie</result>
+			
+			<result name="input" type="redirect">/jsp/movie.jsp</result>
+
+		</action>
+		
+		<action name="downmovie" class="edu.nju.onlinestock.action.DownmovieAction">
+
+			<result name="success" type="redirect">/DessertHouse/movie</result>
+			
+			<result name="index" type="redirect">/jsp/index.jsp</result>
+
+		</action>
+		<action name="book" class="edu.nju.onlinestock.action.BookAction">
+
+			<result name="success" type="redirect">/jsp/book.jsp</result>
+			
+
+		</action>
+
+	</package>
+
+</struts>
+

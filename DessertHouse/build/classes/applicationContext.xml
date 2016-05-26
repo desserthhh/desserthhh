@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans         
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd        
+      http://www.springframework.org/schema/aop         
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd        
+      http://www.springframework.org/schema/context         
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd        
+      http://www.springframework.org/schema/tx         
+      http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+      http://www.springframework.org/schema/cache 
+      http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
+	<!-- <bean id="..." class="..."> collaborators and configuration for this 
+		bean go here </bean> <bean id="..." class="..."> collaborators and configuration 
+		for this bean go here </bean> more bean definitions go here -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/desserthouse?characterEncoding=utf-8" />
+		<property name="username" value="root" />
+		<property name="password" value="417724343" />
+	</bean>
+
+	<!-- 配置sessionFactory -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="edu.nju.onlinestock.model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.connection.autocommit">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="memberDao" class="edu.nju.onlinestock.dao.impl.MemberDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="waiterDao" class="edu.nju.onlinestock.dao.impl.WaiterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="managerDao" class="edu.nju.onlinestock.dao.impl.ManagerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="planDao" class="edu.nju.onlinestock.dao.impl.PlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="commodityDao" class="edu.nju.onlinestock.dao.impl.CommodityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" ></property>
+	</bean>
+	
+	<bean id="memberService" class="edu.nju.onlinestock.service.impl.MemberServiceImpl">
+		<property name="memberDao" ref="memberDao" ></property>
+	</bean>	
+	
+	<bean id="waiterService" class="edu.nju.onlinestock.service.impl.WaiterServiceImpl">
+		<property name="waiterDao" ref="waiterDao" ></property>
+	</bean>	
+	
+	<bean id="managerService" class="edu.nju.onlinestock.service.impl.ManagerServiceImpl">
+		<property name="managerDao" ref="managerDao" ></property>
+	</bean>	
+	
+	<bean id="planService" class="edu.nju.onlinestock.service.impl.PlanServiceImpl">
+		<property name="planDao" ref="planDao" ></property>
+	</bean>	
+	
+	<bean id="commodityService" class="edu.nju.onlinestock.service.impl.CommodityServiceImpl">
+		<property name="commodityDao" ref="commodityDao" ></property>
+	</bean>	
+	
+	<bean id="RegisterAction" class="edu.nju.onlinestock.action.RegisterAction">
+		<property name="memberService" ref="memberService" ></property>
+	</bean>	
+	
+	<bean id="LoginAction" class="edu.nju.onlinestock.action.LoginAction">
+		<property name="memberService" ref="memberService" ></property>
+		<property name="waiterService" ref="waiterService" ></property>
+		<property name="managerService" ref="managerService" ></property>
+	</bean>
+	
+	<bean id="CardAction" class="edu.nju.onlinestock.action.CardAction">
+		<property name="memberService" ref="memberService" ></property>
+	</bean>
+	
+	<bean id="AccountAction" class="edu.nju.onlinestock.action.AccountAction">
+		<property name="memberService" ref="memberService" ></property>
+	</bean>
+	
+	<bean id="PlanAction" class="edu.nju.onlinestock.action.PlanAction">
+		<property name="planService" ref="planService" ></property>
+		<property name="commodityService" ref="commodityService" ></property>
+	</bean>
+	
+	<bean id="AllowplanAction" class="edu.nju.onlinestock.action.AllowplanAction">
+		<property name="planService" ref="planService" ></property>
+		<property name="commodityService" ref="commodityService" ></property>
+	</bean>
+	
+	<bean id="AllowandAlterAction" class="edu.nju.onlinestock.action.AllowandAlterAction">
+		<property name="planService" ref="planService" ></property>
+	</bean>
+	
+	<bean id="SetplanAction" class="edu.nju.onlinestock.action.SetplanAction">
+		<property name="planService" ref="planService" ></property>
+	</bean>
+	
+	<bean id="SaleAction" class="edu.nju.onlinestock.action.SaleAction">
+		<property name="planService" ref="planService" ></property>
+		<property name="commodityService" ref="commodityService" ></property>
+		<property name="waiterService" ref="waiterService" ></property>
+	</bean>
+	
+	<bean id="TransitAction" class="edu.nju.onlinestock.action.TransitAction">
+	    <property name="memberService" ref="memberService" ></property>
+	</bean>
+	
+	<bean id="SeatAction" class="edu.nju.onlinestock.action.SeatAction">
+		<property name="planService" ref="planService" ></property>
+		<property name="memberService" ref="memberService" ></property>
+		<property name="commodityService" ref="commodityService" ></property>
+	</bean>
+	
+	<bean id="BuyAction" class="edu.nju.onlinestock.action.BuyAction">
+		<property name="planService" ref="planService" ></property>
+	</bean>
+	
+	<bean id="BookAction" class="edu.nju.onlinestock.action.BookAction">
+		<property name="planService" ref="planService" ></property>
+		<property name="commodityService" ref="commodityService" ></property>
+	</bean>
+	
+	<!-- 定义 Autowired 自动注入 bean -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<!-- 扫描有注解的文件 base-package 包路径 -->
+	<context:component-scan base-package="edu.nju.onlinestock" />
+	<!-- 声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*User" propagation="REQUIRED" />
+			<tx:method name="*" propagation="NOT_SUPPORTED" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<!-- 定义切面，在edu.nju.onlinestock.service包及子包中所有以Service结尾的方法中,执行有关的hibernate session的事务操作 -->
+	<aop:config>
+		<!-- 只对业务逻辑层实施事务 -->
+		<aop:pointcut id="serviceOperation"
+			expression="execution( * edu.nju.onlinestock.service..*Service.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation" />
+	</aop:config>
+</beans>
