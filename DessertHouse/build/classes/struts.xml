@@ -31,6 +31,12 @@
 
 		</action>
 		
+		<action name="loginout" class="edu.nju.onlinestock.action.LoginoutAction">
+		
+			<result name="success" type="redirect">/jsp/index.jsp</result>
+			
+		</action>
+		
 		<action name="card" class="edu.nju.onlinestock.action.CardAction">
 
 			<result name="success" type="redirect">/DessertHouse/account</result>
