@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <head>
-<title>在线选座-MStore</title>
+<title>在线预定-MStore</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -120,7 +120,8 @@ float:left;
     	</div>
        <div>
             <div id="memberInfo" class="hidden">
-            <%	 String mid = (String)request.getServletContext().getAttribute("mid");
+            <%	 
+            String mid = (String)request.getServletContext().getAttribute("mid");
             String m_name = (String)request.getServletContext().getAttribute("m_name");
             String m_tel = (String)request.getServletContext().getAttribute("m_tel");
             String m_level = (String)request.getServletContext().getAttribute("m_level");
@@ -153,32 +154,60 @@ float:left;
             </div>
             <br>
              <div  id="form" >
-     		<h1>购买</h1>
-            <form action="/DessertHouse/buy" method="post" id="buy-form">
+     		
+            <form action="/DessertHouse/buy" method="post" id="buy-form" class="basic-grey">
+            <h1>购买</h1>
             <%
             String c_name = (String)request.getServletContext().getAttribute("name");
+            if(c_name!=null){
+            	
+     
             int price = Integer.parseInt((String)request.getServletContext().getAttribute("price"));
 			   String date = (String)request.getServletContext().getAttribute("date");
 			   String type = (String)request.getServletContext().getAttribute("type");
 			   int num = Integer.parseInt((String)request.getServletContext().getAttribute("num"));
 			   String pid = (String)request.getServletContext().getAttribute("pid");			 
 				String u_type = (String)request.getServletContext().getAttribute("accountType");		
+            
              %>
                 <input type="text" value="<%=pid %>" name="pid" style="display:none">
                 <input type="text" id="sale" value="" name="sale" style="display:none">
-                <p>日期：<span><%=date %></span></p> 
-                <p>名称：<span><%=c_name %></span></p>               
-                <p>价钱：<span><%=price %></span></p>             
-                <p>个数：<input type="number" id="counter" name="num" value="">(<%=num %>)</p>   
-                 <%if(u_type=="waiter"){
+                <div>
+                	<span>日期：</span>
+                	<span><%=date %></span>
+                	<br/>
+                </div> 
+                
+                <div>
+                	<span>名称：</span>
+                	<span><%=c_name %></span>
+                	<br/> 
+                </div>
+                              
+                <div>
+                	<span>单价：</span>
+                	<span><%=price %></span>
+                	<br/>
+                </div> 
+                           
+                <div>
+                	<span>数量：</span>
+                	<input type="number" id="counter" name="num" value="">现有库存(<%=num %>)
+                	<br/>
+                </div>  
+                <%if(u_type=="waiter"){
                 %>
-               	<select name="pay">
+               	<div>
+                	<span>支付方式：</span>
+                	<select name="pay">
                		<option value="1">在线支付</option>
                		<option value="0">现金</option>
                	</select>
-               	<%} %>        
-               	<br>                           
-                <input type="submit" value="选购">
+               	<br/>        
+                </div>
+               	<%}} %>        
+                                                
+                <input class="button"type="submit" value="选购">
              </form>       
        	<div class="clear"></div>
             </div>

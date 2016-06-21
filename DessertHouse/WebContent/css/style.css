@@ -315,7 +315,67 @@ body {
           transition-duration: .3s;
   
 }
-
+/***表单样式***/
+.basic-grey {
+margin-left:auto;
+margin-right:auto;
+max-width: 500px;
+background: #F7F7F7;
+padding: 25px 15px 25px 10px;
+font: 12px Georgia, "Times New Roman", Times, serif;
+color: #888;
+text-shadow: 1px 1px 1px #FFF;
+border:1px solid #E4E4E4;
+}
+.basic-grey h1 {
+font-size: 25px;
+padding: 0px 0px 10px 40px;
+display: block;
+border-bottom:1px solid #E4E4E4;
+margin: -10px -15px 30px -10px;
+color: #888;
+}
+.basic-grey div{
+	margin-bottom:20px;
+	margin-left:50px;
+}
+.basic-grey div>span{
+	font-size: 20px;
+	font-family: SimHei;
+}
+.basic-grey div>input{
+	height:21px;
+	width:30%;
+	margin-right:20px;
+}
+.basic-grey div>select {
+	margin-left:5px;
+background: #FFF url('down-arrow.png') no-repeat right;
+background: #FFF url('down-arrow.png') no-repeat right);
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance: none;
+text-indent: 0.01px;
+text-overflow: '';
+width: 35%;
+height: 30px;
+line-height: 25px;
+}
+.basic-grey .button {
+	margin-top:30px;
+	margin-left:70px;
+background: #E27575;
+border: none;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+box-shadow: 1px 1px 5px #B6B6B6;
+border-radius: 3px;
+text-shadow: 1px 1px 1px #9E3F3F;
+cursor: pointer;
+}
+.basic-grey .button:hover {
+background: #CF7A7A
+}
 .content_bottom {
 	padding:10px 20px;
 	border: 1px solid #EBE8E8;
