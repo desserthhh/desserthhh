@@ -274,6 +274,48 @@ body {
 	border: 1px solid #EBE8E8;
 	background: url(../images/strip-bg.gif) repeat-x #F6F6F6;
 }
+/***定义预定页面中label的样式***/
+.labelStyle{
+	margin-left:15px;
+	margin-right:15px;
+	font-size: 25px;
+	font-family:SimSun;
+	
+}
+/******设置下拉框的宽度*********/
+.selectStyle{
+	width:150px;
+	height: 30px;
+}
+/*******按钮的样式*******/
+.buttonStyle{
+	color: #666;
+  border-radius:5px;
+  background-color: #EEE;
+  border-color: #EEE;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: STHeiti;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 30px;
+  margin: 20px;
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  
+}
+
 .content_bottom {
 	padding:10px 20px;
 	border: 1px solid #EBE8E8;

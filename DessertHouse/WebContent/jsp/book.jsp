@@ -74,22 +74,22 @@
     	    </div>
     		<div class="clear"></div>
     	</div>
-    		<div class="section group">      
-    			<br>         
-                <label>店铺</label>
-                <select id="store">
-                    <option value="">--</option>
-                    <option value="nj">南京市</option>
-                    <option value="sh">上海市</option>
-                </select>               
-                <label>种类</label>
-                <select id="type">
-                    <option value="">--</option>
-                    <option value="drink">饮料</option>
-                    <option value="dessert">甜品</option>
-                </select>
-                <input type="submit" id="search" value="搜索" onclick="search()" />
-            </div>
+    	<div class="section group">      
+    		<br>         
+               <label class="labelStyle">店铺</label>
+               <select class ="selectStyle" id="store">
+                   <option value="">--</option>
+                   <option value="nj">南京市</option>
+                   <option value="sh">上海市</option>
+               </select>               
+               <label class="labelStyle">种类</label>
+               <select class ="selectStyle" id="type">
+                   <option value="">--</option>
+                   <option value="drink">饮料</option>
+                   <option value="dessert">甜品</option>
+               </select>
+               <input class="buttonStyle" type="submit" id="search" value="搜索" onclick="search()" />
+        </div>
 
     <div class="component">
 		<table>
