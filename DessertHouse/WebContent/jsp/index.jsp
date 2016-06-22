@@ -40,10 +40,12 @@
 						    }else{
 						%>
 						    <li><a href="#" target="_blank">欢迎你，<%=name %></a></li>
+						    <li><a href="/DessertHouse/account.action">账号管理</a></li>
+						    <li><a href="/DessertHouse/loginout.action">登出</a></li>
 						<%
 						    }
 						%>
-							<li><a href="/DessertHouse/account.action">账号管理</a></li>
+							
 						</ul>
 					</div>
 				<div class="clear"></div>
