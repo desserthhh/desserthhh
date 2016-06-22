@@ -42,7 +42,7 @@ public class MemberDaoImpl extends YeekuHibernateDaoSupport
 		baseDao.save(member);
 		System.out.println("save:name:"+member.getName());
 		
-		m = this.findByTel(member);
+		m = this.findByTel(member.getTel());
 		return m;
 	}
 
@@ -59,10 +59,10 @@ public class MemberDaoImpl extends YeekuHibernateDaoSupport
 	}
 	
 	@Override
-	public Member findByTel(Member member) {
+	public Member findByTel(int tel) {
 		// TODO Auto-generated method stub
 		Member m = null;
-		String hql = "from edu.nju.onlinestock.model.Member where tel ='"+member.getTel()+"'";
+		String hql = "from edu.nju.onlinestock.model.Member where tel ='"+tel+"'";
 		Session session = baseDao.getNewSession();
 		List<Member> ml = session.createQuery(hql).list();
 		if(ml.size()>0){

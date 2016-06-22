@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member registerMember(Member member) {
 		// TODO Auto-generated method stub
-		Member m = memberDao.findByTel(member);
+		Member m = memberDao.findByTel(member.getTel());
 		if(m == null){
 			System.out.println("222");
 			int account = 0;
@@ -145,5 +145,12 @@ public class MemberServiceImpl implements MemberService {
 	public List<Recharge> getRechargeByAccount(int account) {
 		// TODO Auto-generated method stub
 		return memberDao.getRecharge(account);
+	}
+
+
+	@Override
+	public Member getMemberByTel(int tel) {
+		// TODO Auto-generated method stub
+		return memberDao.findByTel(tel);
 	}
 }

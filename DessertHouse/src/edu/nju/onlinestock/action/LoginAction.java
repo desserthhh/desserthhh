@@ -91,9 +91,9 @@ public class LoginAction extends BaseAction {
 			
 			if(memberService.checkLogin(member)){
 				sc.setAttribute("accountType", "member");
-				
+				member = memberService.getMemberByTel(account);
 				sc.setAttribute("account", Integer.toString(member.getAccount()));
-				String name = memberService.getNameByAccount(account);
+				String name = member.getName();
 				System.out.println(name);
 				sc.setAttribute("account_name", name);
 				

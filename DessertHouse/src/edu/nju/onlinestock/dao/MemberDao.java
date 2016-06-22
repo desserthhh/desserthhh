@@ -17,7 +17,7 @@ public interface MemberDao {
 	
 	boolean findByAccount(Member member);
 	
-	Member findByTel(Member member);
+	Member findByTel(int tel);
 	
 	boolean findByAccountAndPassword(Member member);
 	

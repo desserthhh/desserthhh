@@ -18,6 +18,8 @@ public interface MemberService {
 	
 	Member getMemberByAccount(int account);
 	
+	Member getMemberByTel(int tel);
+	
 	void update(Member member);
 	
 	boolean setCard(int account,String password,String card);//绑定银行卡
