@@ -153,8 +153,8 @@ float:left;
             	<div class="clear"></div>
             </div>
             <br>
-             <div  id="form" >
-     		
+             <div class="divStyle" id="form" >
+     		<img alt="正在加载" src="../images/5.jpg">
             <form action="/DessertHouse/buy" method="post" id="buy-form" class="basic-grey">
             <h1>购买</h1>
             <%
