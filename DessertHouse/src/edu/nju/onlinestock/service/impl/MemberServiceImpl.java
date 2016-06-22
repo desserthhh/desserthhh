@@ -53,7 +53,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean checkLogin(Member member) {
 		// TODO Auto-generated method stub
-		return memberDao.findByAccountAndPassword(member);
+		return memberDao.findByTelAndPassword(member);
 	}
 	
 	@Override

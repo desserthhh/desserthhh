@@ -93,6 +93,27 @@ public class MemberDaoImpl extends YeekuHibernateDaoSupport
 		
 		
 	}
+	
+	
+
+	@Override
+	public boolean findByTelAndPassword(Member member) {
+		Member m = null;
+		String hql = "from edu.nju.onlinestock.model.Member where tel ='"+member.getTel()+"'";
+		Session session = baseDao.getNewSession();
+		List<Member> ml = session.createQuery(hql).list();
+		if(ml.size()>0){
+			m = ml.get(0);
+			System.out.println(m.getPassword());
+			if(m.getPassword().equals(member.getPassword()))
+				return true;
+			else
+				return false;
+		}else{
+			System.out.println("找不到");
+			return false;
+		}
+	}
 
 	@Override
 	public Member getMemberByAccount(int account) {
@@ -176,5 +197,6 @@ public class MemberDaoImpl extends YeekuHibernateDaoSupport
 		Session session = baseDao.getNewSession();
 		return session.createQuery(hql).list();
 	}
+
 
 }

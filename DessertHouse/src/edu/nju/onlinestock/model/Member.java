@@ -17,10 +17,10 @@ public class Member implements Serializable {
 	 */
 	
 	private int mid;
-	@Id
 	private int account;
 	private String name;
 	private String password;
+	@Id
 	private int tel;
 	private String card;
 	private int money;
@@ -32,8 +32,8 @@ public class Member implements Serializable {
 	
 	public Member(){}
 
-	public Member(int account, String password){
-		this.account = account;
+	public Member(int tel, String password){
+		this.tel = tel;
 		this.password = password;
 	}
 	

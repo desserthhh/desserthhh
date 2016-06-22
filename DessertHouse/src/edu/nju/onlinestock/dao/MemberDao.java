@@ -21,6 +21,8 @@ public interface MemberDao {
 	
 	boolean findByAccountAndPassword(Member member);
 	
+	boolean findByTelAndPassword(Member member);
+	
 	String getNameByAccount(int account);
 
 	Member getMemberByAccount(int account);
