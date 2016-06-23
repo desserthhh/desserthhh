@@ -26,10 +26,7 @@
     
 </head>
     <body>
-       <!-- Container -->
-        <div id="container">
-        
-            <!-- Top -->
+    	<!-- Top -->
 			<div class="top"> 
             	<!-- Logo -->
             	<div id="logo">
@@ -39,10 +36,14 @@
                 
             </div>
             <!-- /Top -->
+       <!-- Container -->
+        <div id="container">
+        
+            
             
             <!-- Content -->
             <div id="content" >
-            
+            	 
                 <!-- Profile -->
                 <div id="profile"> 
                  	<!-- About section -->
@@ -91,7 +92,7 @@
 				         <%
 				         }
 				        %>
-                        <p>友情提示：当您账户余额不足30元或账户状态处于暂停时，请及时充值以确保您的账号可以正常使用。</p>
+                        <p style="color:white;">友情提示：当您账户余额不足30元或账户状态处于暂停时，请及时充值以确保您的账号可以正常使用。</p>
                     </div>
                     <!-- /About section -->
                      
@@ -108,12 +109,12 @@
                 </div>        
                 <!-- /Profile --> 
 
-                <!-- Menu -->
+               <!-- Menu -->
                 <div class="menu">
                 	<ul class="tabs">
                     	<li><a href="#profile" class="tab-profile">我的资料</a></li>
                     	<li><a href="#resume" class="tab-resume">消费记录</a></li>
-                    	<li><a href="#portfolio" class="tab-portfolio">预订</a></li>
+                    	<li><a href="#portfolio" class="tab-portfolio">足迹</a></li>
                     	<li><a href="#contact" class="tab-contact">充值</a></li>
                     </ul>
                 </div>
@@ -135,8 +136,8 @@
                 	     %>
                             <li>                
                                 <div class="timelineUnit">
-                                    <h4>消费金额：<span class="timelineDate"><%=time_cost[i] %></span></h4>
-                                    <h5><%=money_cost[i] %></h5>
+                                    <h4>消费金额：<span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
+                                    
                                 </div>
                             </li>
                           <%
@@ -262,7 +263,7 @@
             
             <!-- Footer -->
 			<div class="footer">
-            	<div class="copyright">Copyright &copy; 2015.Company name All rights reserved.</div>
+            	<div class="copyright"></div>
             </div>
             <!-- /Footer -->  
             
