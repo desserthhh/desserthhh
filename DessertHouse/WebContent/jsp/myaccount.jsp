@@ -126,7 +126,14 @@
                         <!-- Timeline for Employment  -->   
                         <h3 class="main-heading"><span>消费记录</span></h3>   
                         <ul class="timeline">
+                        	<li>                
+                                <div class="timelineUnit">
+                                    <h4>消费金额<span class="timelineDate" style="color:black;">消费时间</span></h4>
+                                    
+                                </div>
+                            </li>
                         <% 
+                        		String[] dessert_name=(String[])request.getServletContext().getAttribute("");
                                 String[] money_cost = (String[])request.getServletContext().getAttribute("money_cost");
                         		if(money_cost!=null){
                         		String[] time_cost = (String[])request.getServletContext().getAttribute("time_cost");
@@ -134,9 +141,10 @@
                  
                         		for(int i = 0;i<num_cost;i++){
                 	     %>
+                	     	
                             <li>                
                                 <div class="timelineUnit">
-                                    <h4>消费金额：<span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
+                                    <h4><span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
                                     
                                 </div>
                             </li>
@@ -160,8 +168,8 @@
                 	     %>
                             <li>            
                                 <div class="timelineUnit">
-                                    <h4>充值金额：<span class="timelineDate"><%=time_recharge[i] %></span></h4>
-                                    <h5><%=money_recharge[i] %></h5>
+                                    <h4>充值金额：<span><%=money_recharge[i] %></span><span class="timelineDate"><%=time_recharge[i] %></span></h4>
+                                    
                                 </div>
                             </li>
                          <%
