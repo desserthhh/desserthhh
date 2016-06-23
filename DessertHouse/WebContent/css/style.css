@@ -315,11 +315,17 @@ body {
           transition-duration: .3s;
   
 }
+.img{
+	float:left;
+	margin-left:80px;
+	margin-top:80px;
+}
 /***表单样式***/
 .basic-grey {
-margin-left:auto;
-margin-right:auto;
-max-width: 500px;
+	float:left;
+margin-left:100px;;
+margin-top:40px;
+width: 600px;
 background: #F7F7F7;
 padding: 25px 15px 25px 10px;
 font: 12px Georgia, "Times New Roman", Times, serif;
@@ -337,29 +343,24 @@ color: #888;
 }
 .basic-grey div{
 	margin-bottom:20px;
-	margin-left:50px;
+	margin-left:60px;
 }
 .basic-grey div>span{
+	
 	font-size: 20px;
 	font-family: SimHei;
 }
 .basic-grey div>input{
+	
 	height:21px;
 	width:30%;
-	margin-right:20px;
+	margin-left:3%;
+	margin-bottom:15px;
 }
-.basic-grey div>select {
-	margin-left:5px;
-background: #FFF url('down-arrow.png') no-repeat right;
-background: #FFF url('down-arrow.png') no-repeat right);
-appearance:none;
--webkit-appearance:none;
--moz-appearance: none;
-text-indent: 0.01px;
-text-overflow: '';
-width: 35%;
-height: 30px;
-line-height: 25px;
+.basic-grey div>select{
+	height:31px;
+	margin-left:10px;
+	margin-bottom:10px;
 }
 .basic-grey .button {
 	margin-top:30px;
@@ -376,6 +377,8 @@ cursor: pointer;
 .basic-grey .button:hover {
 background: #CF7A7A
 }
+
+
 .content_bottom {
 	padding:10px 20px;
 	border: 1px solid #EBE8E8;
@@ -465,6 +468,7 @@ background: #CF7A7A
 	background: #FCFCFC;
     border-top: 1px solid #CECECE;
     margin:20px auto;
+    clear:both;
 }
 .section {
 	clear: both;

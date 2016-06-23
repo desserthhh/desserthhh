@@ -91,18 +91,7 @@ input:focus{border-color:#ccc;color:#333;}
     <div class="component">
         <form method="post" action="#">
 		<table>
-			<thead>
-				<tr>
-                    <th>日期</th>
-					<th>店铺</th>
-                    <th>名称</th>
-					<th>类型</th>
-					<th>价格</th>
-					<th>数量</th>
-					<th>状态</th>
-                    <th>修改</th>
-				</tr>
-			</thead>
+			
 			<%
             String[] c_name = (String[])request.getServletContext().getAttribute("c_name");
 			if(c_name != null){
@@ -140,21 +129,30 @@ input:focus{border-color:#ccc;color:#333;}
         </form>
 	</div>
     <div class="section group">
-		<h1>新计划</h1>
-			<form method="post" action="/DessertHouse/setplan">
+		
+			<form method="post" action="/DessertHouse/setplan" class="basic-grey">
+               <h1>新计划</h1>
                <script type="text/javascript" src="../js/date.js"></script>
                 <% 	String[] all_com =(String[])request.getServletContext().getAttribute("all_cname");
                     String[] all_cid =(String[])request.getServletContext().getAttribute("all_cid");
                     int c_len = (Integer)request.getServletContext().getAttribute("c_len");
-                %>  
-                <lable>选择店铺：</lable>
-                <select name="store">
-                    <option value="" selected="selected"> </option>
-                    <option value="nj">南京店</option>  
-                    <option value="sh">上海店</option>  
-                 </select><br>
-                 	选择日期：<input name="date" type="text" value="" size="14" readonly onClick="showcalendar(event,this);" onFocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''">
-               		  商品：<select name="cid">
+                %>
+                <div>
+                	<span>选择店铺：</span>
+	                <select name="store" >
+	                    <option value="" selected="selected"> </option>
+	                    <option value="nj">南京店</option>  
+	                    <option value="sh">上海店</option>  
+	                 </select>
+	                
+                </div>  
+                <div>
+                	<span style="float:left;">选择日期：</span>        
+              		<input name="date" type="text" value=""  style="float:left;" onClick="showcalendar(event,this);" onFocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''">
+                </div>
+                <div style="clear:both;">
+                	<span>选择商品：</span>
+                	<select name="cid" >
                         <option value="" selected="selected"> </option>
                     <% 
                     for(int i=0;i<c_len;i++){
@@ -163,17 +161,32 @@ input:focus{border-color:#ccc;color:#333;}
                     <%
                         }
                     %>
-                        </select><br>
-                    价格：<input type="text" name="price" value=""/>
-                    数量：<input type="text" name="num" value=""/>
-			    <input type="submit" value="确认"  class="btn">
+                    </select>
+                   
+                </div>
+               	<div>
+               		<span style="float:left;">制定价格：</span>
+               	    <input type="text" name="price" value="" style="float:left;"/> 
+               	               
+               	</div>
+               	
+               	<div style="clear:both;">
+               	
+               		<span style="float:left;">预订数量：</span>
+               		<input type="text" name="num" value="" style="float:left;"/>
+               		
+               	</div>	
+               	
+               		<input type="submit" value="确认" class="btn" style="clear:both;margin-left:80px;margin-top:30px;">
+               	
+			    
 			</form>          
     </div>
     </div>
     </div>
  </div>
          
-   <div class="footer">
+   <div class="footer" >
    	  <div class="wrap">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">

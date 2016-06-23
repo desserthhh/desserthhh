@@ -153,8 +153,8 @@ float:left;
             	<div class="clear"></div>
             </div>
             <br>
-             <div class="divStyle" id="form" >
-     		<img alt="正在加载" src="../images/5.jpg">
+             <div  id="form" >
+     		<img class="img" alt="正在加载" src="../images/5.jpg">
             <form action="/DessertHouse/buy" method="post" id="buy-form" class="basic-grey">
             <h1>购买</h1>
             <%
@@ -200,9 +200,9 @@ float:left;
                	<div>
                 	<span>支付方式：</span>
                 	<select name="pay">
-               		<option value="1">在线支付</option>
-               		<option value="0">现金</option>
-               	</select>
+	               		<option value="1">在线支付</option>
+	               		<option value="0">现金</option>
+               		</select>
                	<br/>        
                 </div>
                	<%}} %>        
