@@ -176,12 +176,48 @@
                 <!-- Portfolio -->
                 <div id="portfolio">
 
-                     <ul>
-                        <li ><a href="/DessertHouse/book.action" >慕斯蛋糕</a></li>
-                        <li><a href="/DessertHouse/book.action" >西米露</a></li>
-                        <li><a href="/DessertHouse/book.action" >拿铁</a></li>
-                        <li><a href="/DessertHouse/book.action" >奶茶</a></li>
-                    </ul>
+                    
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/5.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">慕斯蛋糕</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥15</label>
+                        			
+                        		</div>
+                        	</div>
+                        	
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/6.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">薄荷心语</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥42</label>
+                        			
+                        		</div>
+                        	</div>
+                        	<div style="clear:both;"></div>
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/7.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">樱桃布丁</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥26</label>
+                        			
+                        		</div>
+                        	</div>
+                        	
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/8.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">拿铁咖啡</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥38</label>
+                        			
+                        		</div>
+                        	</div>
+                       
+                       
                 </div>
                 <!-- /Portfolio -->   
                 
