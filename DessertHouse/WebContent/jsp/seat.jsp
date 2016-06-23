@@ -207,7 +207,7 @@ float:left;
                 </div>
                	<%}} %>        
                                                 
-                <input class="button"type="submit" value="选购">
+                <input class="button" type="submit" value="选购">
              </form>       
        	<div class="clear"></div>
             </div>

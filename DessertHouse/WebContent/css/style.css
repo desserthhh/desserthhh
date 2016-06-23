@@ -377,7 +377,19 @@ cursor: pointer;
 .basic-grey .button:hover {
 background: #CF7A7A
 }
-
+/***提示购买成功的页面****/
+.hint-success {
+margin-left:500px;
+margin-top:60px;
+width: 600px;
+height:200px;
+background: #F7F7F7;
+padding: 25px 15px 25px 10px;
+font: 34px Georgia, "Times New Roman", Times, serif;
+color: #888;
+text-shadow: 1px 1px 1px #FFF;
+border:1px solid #E4E4E4;
+}
 
 .content_bottom {
 	padding:10px 20px;
