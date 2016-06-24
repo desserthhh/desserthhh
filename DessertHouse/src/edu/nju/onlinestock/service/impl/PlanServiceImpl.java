@@ -60,6 +60,12 @@ public class PlanServiceImpl implements PlanService {
 		// TODO Auto-generated method stub
 		return planDao.saveAllsale(allsale);
 	}
+
+	@Override
+	public List<Plan> getPlanByCid(int cid) {
+		// TODO Auto-generated method stub
+		return planDao.getPlanByCid(cid);
+	}
 	
 
 }

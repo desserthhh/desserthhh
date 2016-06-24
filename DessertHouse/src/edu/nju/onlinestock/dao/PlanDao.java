@@ -13,6 +13,8 @@ public interface PlanDao {
 
 	Plan getPlanByPid(int pid);
 	
+	List<Plan> getPlanByCid(int cid);
+	
 	List<Plan> getAllPlan();
 	
 	public boolean saveAllsale(Allsale allsale) ;

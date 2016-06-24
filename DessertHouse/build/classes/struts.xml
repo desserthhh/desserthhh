@@ -170,11 +170,27 @@
 			<result name="index" type="redirect">/jsp/index.jsp</result>
 
 		</action>
+		
 		<action name="book" class="edu.nju.onlinestock.action.BookAction">
 
 			<result name="success" type="redirect">/jsp/book.jsp</result>
 			
+		</action>
+		
+		<action name="show" class="edu.nju.onlinestock.action.ShowAction">
 
+			<result name="success" type="redirect">/jsp/seat.jsp</result>
+			
+			<result name="fail" type="redirect">/jsp/index.jsp</result>
+			
+		</action>
+
+		<action name="commodity" class="edu.nju.onlinestock.action.CommodityAction">
+
+			<result name="success" type="redirect">/jsp/show.jsp</result>
+			
+			
+			
 		</action>
 
 	</package>

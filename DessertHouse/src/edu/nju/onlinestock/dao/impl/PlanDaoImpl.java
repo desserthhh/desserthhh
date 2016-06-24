@@ -58,6 +58,15 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 		return (Plan) baseDao.load(Plan.class, pid);
 	}
 
+
+	@Override
+	public List<Plan> getPlanByCid(int cid) {
+		String hql = "from edu.nju.onlinestock.model.Plan where date=now() and cid='"+cid+"'";
+		Session session = baseDao.getNewSession();
+		return session.createQuery(hql).list();
+	}
+
+	
 	@Override
 	public List<Plan> getAllPlan() {
 		// TODO Auto-generated method stub
@@ -66,7 +75,6 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 		return session.createQuery(hql).list();
 	}
 
-	
 
 	@Override
 	public boolean saveAllsale(Allsale allsale) {

@@ -10,6 +10,8 @@ public interface PlanService {
 	
 	Plan getPlanByPid(int pid);
 	
+	List<Plan> getPlanByCid(int cid);
+	
 	boolean setPlan(Plan plan);//添加放映计划
 	
 	boolean allowPlanByPid(int pid);//经理批准放映计划
