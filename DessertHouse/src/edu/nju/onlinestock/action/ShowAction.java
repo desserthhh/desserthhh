@@ -42,7 +42,7 @@ public class ShowAction extends BaseAction{
 		String price = null;
 		String num = null;
 		String date = null;
-		String image = "../images/commodity/"+cid+".jpg";
+		String image = "../images/commodity/"+(cid+1)+".jpg";
 		if(pl.size()>0){
 			num = Integer.toString(pl.get(0).getNum());
 			if(pl.get(0).getNum()>0){
