@@ -12,8 +12,6 @@ import edu.nju.onlinestock.service.CommodityService;
 import edu.nju.onlinestock.service.PlanService;
 
 public class ShowAction extends BaseAction{
-	String success = "success";
-	String fail = "fail";
 	
 	@Autowired
 	private PlanService planService;
@@ -36,6 +34,7 @@ public class ShowAction extends BaseAction{
 		ServletContext sc = request.getServletContext();
 		int cid = Integer.parseInt(request.getParameter("cid"));
 		System.out.println(cid);
+		String result = "fail";
 		Commodity c = commodityService.getCommodityByCid(cid);
 		List<Plan> pl = planService.getPlanByCid(cid);
 		String pid = null;
@@ -43,19 +42,19 @@ public class ShowAction extends BaseAction{
 		String num = null;
 		String date = null;
 		String image = "../images/commodity/"+(cid+1)+".jpg";
-		if(pl.size()>0){
+		if(pl!=null){
 			num = Integer.toString(pl.get(0).getNum());
-			if(pl.get(0).getNum()>0){
-				price = Integer.toString(pl.get(0).getPrice());
-				pid = Integer.toString(pl.get(0).getPid());
-				date = pl.get(0).getDate();
+			int i = 0;
+			while(i<pl.size()){
+				if(pl.get(i).getNum()>0&&pl.get(i).getStatus()==1){
+					price = Integer.toString(pl.get(0).getPrice());
+					pid = Integer.toString(pl.get(0).getPid());
+					date = pl.get(0).getDate();
+					result = "success";
+					break;
+				}
+				i++;
 			}
-			else{
-				return fail;
-			}
-		}
-		else{
-			return fail;
 		}
 		
 		sc.setAttribute("c_name", c.getName());
@@ -67,7 +66,7 @@ public class ShowAction extends BaseAction{
 		sc.setAttribute("image", image);
 		
 		
-		return success;
+		return result;
 		
 	}
 

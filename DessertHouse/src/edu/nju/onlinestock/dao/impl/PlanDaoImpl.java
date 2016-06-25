@@ -70,7 +70,7 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 	@Override
 	public List<Plan> getAllPlan() {
 		// TODO Auto-generated method stub
-		String hql = "from edu.nju.onlinestock.model.Plan where date>now()";
+		String hql = "from edu.nju.onlinestock.model.Plan where date>now() or date=now()";
 		Session session = baseDao.getNewSession();
 		return session.createQuery(hql).list();
 	}

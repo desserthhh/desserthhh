@@ -16,6 +16,16 @@ public class CommodityAction extends BaseAction{
 	private CommodityService commodityService;
 	
 	
+	public CommodityService getCommodityService() {
+		return commodityService;
+	}
+
+
+	public void setCommodityService(CommodityService commodityService) {
+		this.commodityService = commodityService;
+	}
+
+
 	@Override
 	public String execute() throws Exception {
 		ServletContext sc = request.getServletContext();

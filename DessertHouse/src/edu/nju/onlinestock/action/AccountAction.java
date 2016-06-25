@@ -8,8 +8,11 @@ import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.nju.onlinestock.service.CommodityService;
 import edu.nju.onlinestock.service.MemberService;
+import edu.nju.onlinestock.service.PlanService;
 import edu.nju.onlinestock.model.Allsale;
+import edu.nju.onlinestock.model.Commodity;
 import edu.nju.onlinestock.model.Member;
 import edu.nju.onlinestock.model.Recharge;
 
@@ -18,6 +21,29 @@ public class AccountAction extends BaseAction {
 	
 	@Autowired
 	private MemberService memberService;
+	private CommodityService commodityService;
+	private PlanService planService;
+	
+	public CommodityService getCommodityService() {
+		return commodityService;
+	}
+
+
+	public void setCommodityService(CommodityService commodityService) {
+		this.commodityService = commodityService;
+	}
+
+
+	public PlanService getPlanService() {
+		return planService;
+	}
+
+
+	public void setPlanService(PlanService planService) {
+		this.planService = planService;
+	}
+
+
 	public MemberService getMemberService() {
 		return memberService;
 	}
@@ -56,12 +82,16 @@ public class AccountAction extends BaseAction {
 		
 		List<Allsale> sl = memberService.getAllsaleByAccount(account);//我的消费缴费
 		List<Recharge> rl = memberService.getRechargeByAccount(account);
+		List<Commodity> cl = commodityService.getCommodity();
 		if(sl!=null){
+		String[] cname = new String[sl.size()];
 		String[] money_cost = new String[sl.size()];
 		String[] time_cost = new String[sl.size()];
 		String[] money_recharge = new String[rl.size()];
 		String[] time_recharge = new String[rl.size()];
 		for(int i = 0;i<sl.size();i++){
+			int cid = planService.getPlanByPid(sl.get(i).getPid()).getCid();
+			cname[i] = cl.get(cid).getName();
 			money_cost[i] = Integer.toString(sl.get(i).getPrice());
 			time_cost[i] = sl.get(i).getDate().substring(0,16);
 			System.out.println(sl.get(i).getAid());
@@ -73,6 +103,7 @@ public class AccountAction extends BaseAction {
 			time_recharge[i] = rl.get(i).getDate().substring(0,16);
 		}
 				
+		sc.setAttribute("cname", cname);
 		sc.setAttribute("money_cost", money_cost);
 		sc.setAttribute("time_cost", time_cost);
 		sc.setAttribute("num_cost", time_cost.length);
