@@ -26,10 +26,7 @@
     
 </head>
     <body>
-       <!-- Container -->
-        <div id="container">
-        
-            <!-- Top -->
+    	<!-- Top -->
 			<div class="top"> 
             	<!-- Logo -->
             	<div id="logo">
@@ -39,10 +36,14 @@
                 
             </div>
             <!-- /Top -->
+       <!-- Container -->
+        <div id="container">
+        
+            
             
             <!-- Content -->
             <div id="content" >
-            
+            	 
                 <!-- Profile -->
                 <div id="profile"> 
                  	<!-- About section -->
@@ -91,7 +92,7 @@
 				         <%
 				         }
 				        %>
-                        <p>友情提示：当您账户余额不足30元或账户状态处于暂停时，请及时充值以确保您的账号可以正常使用。</p>
+                        <p style="color:white;">友情提示：当您账户余额不足30元或账户状态处于暂停时，请及时充值以确保您的账号可以正常使用。</p>
                     </div>
                     <!-- /About section -->
                      
@@ -108,12 +109,12 @@
                 </div>        
                 <!-- /Profile --> 
 
-                <!-- Menu -->
+               <!-- Menu -->
                 <div class="menu">
                 	<ul class="tabs">
                     	<li><a href="#profile" class="tab-profile">我的资料</a></li>
                     	<li><a href="#resume" class="tab-resume">消费记录</a></li>
-                    	<li><a href="#portfolio" class="tab-portfolio">预订</a></li>
+                    	<li><a href="#portfolio" class="tab-portfolio">足迹</a></li>
                     	<li><a href="#contact" class="tab-contact">充值</a></li>
                     </ul>
                 </div>
@@ -125,7 +126,14 @@
                         <!-- Timeline for Employment  -->   
                         <h3 class="main-heading"><span>消费记录</span></h3>   
                         <ul class="timeline">
+                        	<li>                
+                                <div class="timelineUnit">
+                                    <h4>消费金额<span class="timelineDate" style="color:black;">消费时间</span></h4>
+                                    
+                                </div>
+                            </li>
                         <% 
+                        		String[] dessert_name=(String[])request.getServletContext().getAttribute("");
                                 String[] money_cost = (String[])request.getServletContext().getAttribute("money_cost");
                         		if(money_cost!=null){
                         		String[] time_cost = (String[])request.getServletContext().getAttribute("time_cost");
@@ -133,10 +141,11 @@
                  
                         		for(int i = 0;i<num_cost;i++){
                 	     %>
+                	     	
                             <li>                
                                 <div class="timelineUnit">
-                                    <h4>消费金额：<span class="timelineDate"><%=time_cost[i] %></span></h4>
-                                    <h5><%=money_cost[i] %></h5>
+                                    <h4><span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
+                                    
                                 </div>
                             </li>
                           <%
@@ -159,8 +168,8 @@
                 	     %>
                             <li>            
                                 <div class="timelineUnit">
-                                    <h4>充值金额：<span class="timelineDate"><%=time_recharge[i] %></span></h4>
-                                    <h5><%=money_recharge[i] %></h5>
+                                    <h4>充值金额：<span><%=money_recharge[i] %></span><span class="timelineDate"><%=time_recharge[i] %></span></h4>
+                                    
                                 </div>
                             </li>
                          <%
@@ -176,12 +185,48 @@
                 <!-- Portfolio -->
                 <div id="portfolio">
 
-                     <ul>
-                        <li ><a href="/DessertHouse/book.action" >慕斯蛋糕</a></li>
-                        <li><a href="/DessertHouse/book.action" >西米露</a></li>
-                        <li><a href="/DessertHouse/book.action" >拿铁</a></li>
-                        <li><a href="/DessertHouse/book.action" >奶茶</a></li>
-                    </ul>
+                    
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/5.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">慕斯蛋糕</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥15</label>
+                        			
+                        		</div>
+                        	</div>
+                        	
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/6.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">薄荷心语</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥42</label>
+                        			
+                        		</div>
+                        	</div>
+                        	<div style="clear:both;"></div>
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/7.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">樱桃布丁</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥26</label>
+                        			
+                        		</div>
+                        	</div>
+                        	
+                        	<div style="float:left;width:40%;height:300px;margin-top:5%;margin-left:50px;background-color: #F7F7F7;" onclick="window.open('/DessertHouse/book.action','_self')" >
+                        		<img src="../images/8.jpg" style=""></img>
+                        		<div style="margin-left:10px;width:395px;height:60px;border-radius:17px;">
+                        			<h2 style="margin-left:5px;margin-top:15px;float:left;">拿铁咖啡</h2>
+                     
+                        			<label style="float:left;margin-left:85px;margin-top:15px;font-size: 30px;color:red;">￥38</label>
+                        			
+                        		</div>
+                        	</div>
+                       
+                       
                 </div>
                 <!-- /Portfolio -->   
                 
@@ -226,7 +271,7 @@
             
             <!-- Footer -->
 			<div class="footer">
-            	<div class="copyright">Copyright &copy; 2015.Company name All rights reserved.</div>
+            	<div class="copyright"></div>
             </div>
             <!-- /Footer -->  
             

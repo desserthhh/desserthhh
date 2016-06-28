@@ -11,7 +11,7 @@
 <link href='../images/logo.png' rel="shortcut icon" type="image/x-icon" media="screen"/>
 <script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script> 
 <script type="text/javascript" src="../js/move-top.js"></script>
-
+<meta http-equiv="refresh" content="5;url=index.jsp"> 
 </head>
 <body>
 	<div class="header">
@@ -63,21 +63,17 @@
    		</div>
    </div>
    <!------------End Header ------------>
-    <div class="main">
- 	<div class="wrap">
-     <div class="content">
-     	<div class="content_top">
-    		<div class="back-links">
+    
+ <div class="hint-success">
     		<% String cost = (String)request.getServletContext().getAttribute("cost");
     		%>
-    		<p><a href="#" class="active">购买成功，一共花费￥<%=cost %>。</a></p>
-    	    </div>
-    		<div class="clear"></div>
-    	</div>
-        
-         </div> 
-    </div>
+    		<div><a href="#" class="active">购买成功，一共花费￥<%=cost %>。</a>
+    		<br/>
+    		<br/>
+    		<span>5秒后将自动跳转到首页...</span>
+</div>
  </div>
+ 
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">

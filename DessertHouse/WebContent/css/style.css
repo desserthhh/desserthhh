@@ -274,6 +274,124 @@ body {
 	border: 1px solid #EBE8E8;
 	background: url(../images/strip-bg.gif) repeat-x #F6F6F6;
 }
+/***定义预定页面中label的样式***/
+.labelStyle{
+	margin-left:15px;
+	margin-right:15px;
+	font-size: 25px;
+	font-family:SimSun;
+	
+}
+/******设置下拉框的宽度*********/
+.selectStyle{
+	width:150px;
+	height: 30px;
+}
+/*******按钮的样式*******/
+.buttonStyle{
+	color: #666;
+  border-radius:5px;
+  background-color: #EEE;
+  border-color: #EEE;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: STHeiti;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 30px;
+  margin: 20px;
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition-property: all;
+          transition-property: all;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  
+}
+.img{
+	float:left;
+	margin-left:80px;
+	margin-top:80px;
+}
+/***表单样式***/
+.basic-grey {
+	float:left;
+margin-left:100px;;
+margin-top:40px;
+width: 600px;
+background: #F7F7F7;
+padding: 25px 15px 25px 10px;
+font: 12px Georgia, "Times New Roman", Times, serif;
+color: #888;
+text-shadow: 1px 1px 1px #FFF;
+border:1px solid #E4E4E4;
+}
+.basic-grey h1 {
+font-size: 25px;
+padding: 0px 0px 10px 40px;
+display: block;
+border-bottom:1px solid #E4E4E4;
+margin: -10px -15px 30px -10px;
+color: #888;
+}
+.basic-grey div{
+	margin-bottom:20px;
+	margin-left:60px;
+}
+.basic-grey div>span{
+	
+	font-size: 20px;
+	font-family: SimHei;
+}
+.basic-grey div>input{
+	
+	height:21px;
+	width:30%;
+	margin-left:3%;
+	margin-bottom:15px;
+}
+.basic-grey div>select{
+	height:31px;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+.basic-grey .button {
+	margin-top:30px;
+	margin-left:70px;
+background: #E27575;
+border: none;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+box-shadow: 1px 1px 5px #B6B6B6;
+border-radius: 3px;
+text-shadow: 1px 1px 1px #9E3F3F;
+cursor: pointer;
+}
+.basic-grey .button:hover {
+background: #CF7A7A
+}
+/***提示购买成功的页面****/
+.hint-success {
+margin-left:500px;
+margin-top:60px;
+width: 600px;
+height:200px;
+background: #F7F7F7;
+padding: 25px 15px 25px 10px;
+font: 34px Georgia, "Times New Roman", Times, serif;
+color: #888;
+text-shadow: 1px 1px 1px #FFF;
+border:1px solid #E4E4E4;
+}
+
+
 .content_bottom {
 	padding:10px 20px;
 	border: 1px solid #EBE8E8;
@@ -363,6 +481,7 @@ body {
 	background: #FCFCFC;
     border-top: 1px solid #CECECE;
     margin:20px auto;
+    clear:both;
 }
 .section {
 	clear: both;
