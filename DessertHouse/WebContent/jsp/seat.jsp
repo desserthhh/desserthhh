@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <head>
-<title>在线预定-MStore</title>
+<title>在线预定-DessertHouse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -57,6 +57,7 @@ float:left;
 				<div class="nav_list">
 					<ul>
 						<li><a href="index.jsp">首页</a></li>
+						<li><a href="/DessertHouse/commodity.action">甜品列表</a></li>
 					</ul>
 				</div>
 					<div class="account_desc">
@@ -71,6 +72,8 @@ float:left;
 						    }else{
 						%>
 						    <li><a href="#" target="_blank">欢迎你，<%=name %></a></li>
+						    <li><a href="/DessertHouse/account.action">账号管理</a></li>
+						    <li><a href="/DessertHouse/loginout.action">登出</a></li>
 						<%
 						    }
 						%>
@@ -122,6 +125,7 @@ float:left;
             <div id="memberInfo" class="hidden">
             <%	 
             String mid = (String)request.getServletContext().getAttribute("mid");
+            if(mid!=null){
             String m_name = (String)request.getServletContext().getAttribute("m_name");
             String m_tel = (String)request.getServletContext().getAttribute("m_tel");
             String m_level = (String)request.getServletContext().getAttribute("m_level");
@@ -139,28 +143,29 @@ float:left;
             	<p>消费记录：</p>
             	<%if(money_cost!=null){
                 	int num_cost = Integer.parseInt((String)request.getServletContext().getAttribute("num_cost"));
-                	for(int i=0;i<num_cost;i++){
+                	for(int i=0;i<num_cost;i++){	
                 %>
                 <p><%=money_cost[i]%>  <%=time_cost[i] %></p>
-            	<%}} %>
+            	<%	}
+                } %>
             	<p>缴费记录：</p>
             	<%if(money_recharge!=null){
                 	int num_recharge = Integer.parseInt((String)request.getServletContext().getAttribute("num_recharge"));
                 	for(int i=0;i<num_recharge;i++){
                 %>
                 <p><%=money_recharge[i]%> <%=time_recharge[i] %></p>
-            	<%}} %>
+            	<%	}
+                } 
+            	}%>
             	<div class="clear"></div>
             </div>
             <br>
              <div  id="form" >
-     		<img class="img" alt="正在加载" src="../images/5.jpg">
-            <form action="/DessertHouse/buy" method="post" id="buy-form" class="basic-grey">
-            <h1>购买</h1>
+     		
             <%
             String c_name = (String)request.getServletContext().getAttribute("name");
             if(c_name!=null){
-            	
+            	String image = (String)request.getServletContext().getAttribute("image");
      
             int price = Integer.parseInt((String)request.getServletContext().getAttribute("price"));
 			   String date = (String)request.getServletContext().getAttribute("date");
@@ -170,6 +175,9 @@ float:left;
 				String u_type = (String)request.getServletContext().getAttribute("accountType");		
             
              %>
+             <img class="img" alt="正在加载" src="<%=image %>">
+            <form action="/DessertHouse/buy" method="post" id="buy-form" class="basic-grey">
+            <h1>购买</h1>
                 <input type="text" value="<%=pid %>" name="pid" style="display:none">
                 <input type="text" id="sale" value="" name="sale" style="display:none">
                 <div>

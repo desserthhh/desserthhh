@@ -41,7 +41,7 @@ public class ShowAction extends BaseAction{
 		String price = null;
 		String num = null;
 		String date = null;
-		String image = "../images/commodity/"+(cid+1)+".jpg";
+		String image = "../images/commodity/"+cid+".jpg";
 		if(pl!=null){
 			num = Integer.toString(pl.get(0).getNum());
 			int i = 0;
@@ -57,13 +57,14 @@ public class ShowAction extends BaseAction{
 			}
 		}
 		
-		sc.setAttribute("c_name", c.getName());
+		sc.setAttribute("name", c.getName());
 		sc.setAttribute("pid", pid);
 		sc.setAttribute("price", price);
 		sc.setAttribute("num", num);
 		sc.setAttribute("date", date);
 		sc.setAttribute("cid", Integer.toString(cid));
 		sc.setAttribute("image", image);
+		sc.setAttribute("type", c.getType());
 		
 		
 		return result;

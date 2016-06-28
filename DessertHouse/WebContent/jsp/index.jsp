@@ -25,6 +25,7 @@
 				<div class="nav_list">
 					<ul>
 						<li><a href="">首页</a></li>
+						<li><a href="/DessertHouse/commodity.action">甜品列表</a></li>
 						<li><a href="/DessertHouse/book.action">预订</a></li>
 					</ul>
 				</div>

@@ -20,8 +20,8 @@
 				<div class="nav_list">
 					<ul>
 						<li><a href="index.jsp">首页</a></li>
-						<li><a href="/DessertHouse/list">影片场次</a></li>
-						<li><a href="http://www.wandafilm.com/jingxuan/main.jsp">电影谈资</a></li>
+						<li><a href="/DessertHouse/commodity.action">甜品列表</a></li>
+						
 					</ul>
 				</div>
 					<div class="account_desc">

@@ -48,7 +48,6 @@ input:focus{border-color:#ccc;color:#333;}
 						%>
 						<li><a href="/DessertHouse/allowplan.action">批准计划</a></li>
 
-						<li><a href="/DessertHouse/count.jsp">统计图表</a></li>
 						<%
 						}
 						%>
@@ -61,6 +60,7 @@ input:focus{border-color:#ccc;color:#333;}
 						    if(name != null){
 						%>
 						    <li><a href="#" target="_blank">欢迎你，<%=name %></a></li>
+						    <li><a href="/DessertHouse/loginout.action">登出</a></li>
 						<%
 						    }
 						%>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/account/reset.css"/> 
     <link rel="stylesheet" type="text/css" href="../css/account/style.css"/>
     <link rel="stylesheet" type="text/css" href="../css/account/fancybox.css"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic"/>
     <link href='../images/logo.png' rel="shortcut icon" type="image/x-icon" media="screen"/>
     <script type="text/javascript" src="../js/account/jquery.min.js"></script>
@@ -25,8 +26,43 @@
     <script type="text/javascript" src="../js/account/custom.js"></script>
     
 </head>
+
     <body>
     	<!-- Top -->
+    	<div class="header">
+    	  		 <div class="headertop_desc">
+			<div class="wrap">
+				<div class="nav_list">
+					<ul>
+						<li><a href="">首页</a></li>
+						<li><a href="/DessertHouse/commodity.action">甜品列表</a></li>
+						<li><a href="/DessertHouse/book.action">预订</a></li>
+					</ul>
+				</div>
+					<div class="account_desc">
+						<ul>
+						<%
+						    String name = (String)request.getServletContext().getAttribute("account_name");
+						    if(name == null){
+						%>
+							<li><a href="login.jsp" target="_blank">请登录</a></li>
+							<li><a href="register.jsp" target="_blank">免费注册</a></li>
+						<%
+						    }else{
+						%>
+						    <li><a href="#" target="_blank">欢迎你，<%=name %></a></li>
+						    <li><a href="/DessertHouse/account.action">账号管理</a></li>
+						    <li><a href="/DessertHouse/loginout.action">登出</a></li>
+						<%
+						    }
+						%>
+							
+						</ul>
+					</div>
+				<div class="clear"></div>
+			</div>
+	  	</div>
+	  	</div>
 			<div class="top"> 
             	<!-- Logo -->
             	<div id="logo">
@@ -49,7 +85,7 @@
                  	<!-- About section -->
                 	<div class="about">
                 	<%
-                	     String name = (String)request.getServletContext().getAttribute("account_name");
+                	     
                 	     String account = (String)request.getServletContext().getAttribute("account");
                 	     String tel = (String)request.getServletContext().getAttribute("tel");
                 	     String credit = (String)request.getServletContext().getAttribute("credit");
@@ -133,7 +169,7 @@
                                 </div>
                             </li>
                         <% 
-                        		String[] dessert_name=(String[])request.getServletContext().getAttribute("");
+                        		String[] dessert_name=(String[])request.getServletContext().getAttribute("cname");
                                 String[] money_cost = (String[])request.getServletContext().getAttribute("money_cost");
                         		if(money_cost!=null){
                         		String[] time_cost = (String[])request.getServletContext().getAttribute("time_cost");
@@ -144,7 +180,7 @@
                 	     	
                             <li>                
                                 <div class="timelineUnit">
-                                    <h4><span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
+                                    <h4><span><%=dessert_name[i] %></span>&nbsp&nbsp<span><%=money_cost[i] %></span><span class="timelineDate"><%=time_cost[i] %></span></h4>
                                     
                                 </div>
                             </li>

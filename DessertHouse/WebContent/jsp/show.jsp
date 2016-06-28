@@ -76,6 +76,9 @@
       			<%  String[] cids = (String[])request.getServletContext().getAttribute("cids");
     			 	String[] c_names = (String[])request.getServletContext().getAttribute("c_names");
     			 	String[] images = (String[])request.getServletContext().getAttribute("images");
+    			 	String[] cidd = (String[])request.getServletContext().getAttribute("cidd");
+    			 	String[] d_names = (String[])request.getServletContext().getAttribute("d_names");
+    			 	String[] d_images = (String[])request.getServletContext().getAttribute("d_images");
     			%>
       			<!------------content_top ------------>
       	
@@ -118,18 +121,18 @@
     	  		</div>
     	  		
     	  		<div class="section group">
-    			<% for(int i=15;i<20;i++){
+    			<% for(int i=0;i<5;i++){
     			
     			%>
     				<div class="grid_1_of_5 images_1_of_5">
-					 	<a href="preview.html"><img src="<%=images[i] %>" alt="" /></a>
-						 <h2><a href="preview.html"><%=c_names[i] %></a></h2>
+					 	<a href="preview.html"><img src="<%=d_images[i] %>" alt="" /></a>
+						 <h2><a href="preview.html"><%=d_names[i] %></a></h2>
 						<div class="price-details">
 				       		<div class="price-number">
 								<p><span class="rupees">详情</span></p>
 					    	</div>
 					       	<div class="add-cart">		
-					       		<h4><a href="/DessertHouse/show?cid=<%=cids[i] %>">购买</a></h4>
+					       		<h4><a href="/DessertHouse/show?cid=<%=cidd[i] %>">购买</a></h4>
 							</div>
 							<div class="clear"></div>
 						</div>

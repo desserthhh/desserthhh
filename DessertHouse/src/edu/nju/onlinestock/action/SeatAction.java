@@ -167,7 +167,9 @@ public class SeatAction extends BaseAction {
 		String name =commodity.getName();
 		String date = plan.getDate();
 		String type = commodity.getType();
-		
+		String image =  "../images/commodity/"+commodity.getCid()+".jpg";
+		System.out.println(image);
+		sc.setAttribute("image", image);
 		sc.setAttribute("price",Integer.toString( price));
 		sc.setAttribute("date", date);
 		sc.setAttribute("num", Integer.toString(num));
