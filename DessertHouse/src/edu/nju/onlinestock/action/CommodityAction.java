@@ -39,6 +39,7 @@ public class CommodityAction extends BaseAction{
 			cids[i] = Integer.toString(cl.get(i).getCid());
 			c_names[i] = cl.get(i).getName();
 			images[i] = "../images/commodity/"+(cl.get(i).getCid()+1)+".jpg";
+			System.out.println(images[i]);
 		}
 		
 		sc.setAttribute("cids", cids);
