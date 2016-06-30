@@ -45,7 +45,7 @@ public class CommodityAction extends BaseAction{
 			System.out.println(images[i]);
 		}
 		
-		for(int i=14;i<len;i++){
+		for(int i=15;i<len;i++){
 			cidd[i-15] = Integer.toString(cl.get(i).getCid());
 			d_names[i-15] = cl.get(i).getName();
 			d_images[i-15] = "../images/commodity/"+(cl.get(i).getCid())+".jpg";

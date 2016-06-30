@@ -1,8 +1,10 @@
 package edu.nju.onlinestock.dao.impl;
-
+import java.util.*; 
 import hibernate3.support.YeekuHibernateDaoSupport;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -61,7 +63,7 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 
 	@Override
 	public List<Plan> getPlanByCid(int cid) {
-		String hql = "from edu.nju.onlinestock.model.Plan where date=now() and cid='"+cid+"'";
+		String hql = "from edu.nju.onlinestock.model.Plan where date='"+getNow()+"' and cid='"+cid+"'";
 		Session session = baseDao.getNewSession();
 		return session.createQuery(hql).list();
 	}
@@ -70,7 +72,7 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 	@Override
 	public List<Plan> getAllPlan() {
 		// TODO Auto-generated method stub
-		String hql = "from edu.nju.onlinestock.model.Plan where date>now() or date=now()";
+		String hql = "from edu.nju.onlinestock.model.Plan where date>now() or date='"+getNow()+"'";
 		Session session = baseDao.getNewSession();
 		return session.createQuery(hql).list();
 	}
@@ -95,6 +97,11 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 		return null;
 	}
 
-	
+	String getNow(){
+		Date now = new Date();
+		DateFormat form = new SimpleDateFormat("yyyy-MM-dd "); 
+		String an = form.format(now);
+		return an;
+	}
 
 }

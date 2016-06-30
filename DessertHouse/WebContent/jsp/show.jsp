@@ -89,16 +89,14 @@
     			</div>
     			
     			<div class="section group">
-    			 
     			<% for(int i=0;i<15;i++){
     			
     			%>
     				<div class="grid_1_of_5 images_1_of_5">
 					 	<a href="preview.html"><img src="<%=images[i] %>"  alt="" /></a>
-						 <h2><a href="preview.html"><%=c_names[i] %></a></h2>
 						<div class="price-details">
 				       		<div class="price-number">
-								<p><span class="rupees">详情</span></p>
+								<p><span class="rupees"><%=c_names[i] %></span></p>
 					    	</div>
 					       	<div class="add-cart">		
 					       		<h4><a href="/DessertHouse/show?cid=<%=cids[i] %>">购买</a></h4>
@@ -126,10 +124,9 @@
     			%>
     				<div class="grid_1_of_5 images_1_of_5">
 					 	<a href="preview.html"><img src="<%=d_images[i] %>" alt="" /></a>
-						 <h2><a href="preview.html"><%=d_names[i] %></a></h2>
 						<div class="price-details">
 				       		<div class="price-number">
-								<p><span class="rupees">详情</span></p>
+								<p><span class="rupees"><%=d_names[i] %></span></p>
 					    	</div>
 					       	<div class="add-cart">		
 					       		<h4><a href="/DessertHouse/show?cid=<%=cidd[i] %>">购买</a></h4>

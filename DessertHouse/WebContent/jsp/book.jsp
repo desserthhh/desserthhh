@@ -23,6 +23,7 @@
 			<div class="wrap">
 				<div class="nav_list">
 					<ul>
+						<li><a href="">首页</a></li>
 						<li><a href="">购买</a></li>
 						<%
 						String type = (String)request.getServletContext().getAttribute("accountType");
@@ -70,7 +71,7 @@
      <div class="content">
      	<div class="content_top">
     		<div class="back-links">
-    		<p><a href="index.html">首页</a> &gt;&gt;<a href="#" class="active">批准计划</a></p>
+    		<p><a href="index.html">首页</a> &gt;&gt;<a href="#" class="active">购买</a></p>
     	    </div>
     		<div class="clear"></div>
     	</div>
