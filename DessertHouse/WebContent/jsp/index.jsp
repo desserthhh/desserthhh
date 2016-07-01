@@ -57,14 +57,7 @@
 					<div class="logo">
 						<a href="index.jsp"><img src="../images/logo.png" alt="" /></a>
 					</div>
-						<div class="header_top_right">
-							  <div class="search_box">
-					     		<form>
-					     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-					     		</form>
-					     	</div>
-						 <div class="clear"></div>
-					</div>
+						
 			 <div class="clear"></div>
   		</div>     
 				<div class="header_bottom">		 

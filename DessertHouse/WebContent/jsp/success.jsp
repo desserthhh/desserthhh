@@ -11,7 +11,16 @@
 <link href='../images/logo.png' rel="shortcut icon" type="image/x-icon" media="screen"/>
 <script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script> 
 <script type="text/javascript" src="../js/move-top.js"></script>
+<%
+String type = (String)request.getServletContext().getAttribute("accountType");
+if(type=="waiter"){
+%>
+<meta http-equiv="refresh" content="2;url=/DessertHouse/book.action"> 
+<%}
+else{
+%>
 <meta http-equiv="refresh" content="5;url=index.jsp"> 
+<%} %>
 </head>
 <body>
 	<div class="header">

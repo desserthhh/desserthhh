@@ -52,7 +52,7 @@
      <div class="content">
      	<div class="content_top">
     		<div class="back-links">
-    		<p><a href="index.html">首页</a> &gt;&gt;&gt; <a href="#" class="active">影片场次</a></p>
+    		<p><a href="index.html">首页</a> &gt;&gt;&gt; <a href="#" class="active">输入卡号</a></p>
     	    </div>
     		<div class="clear"></div>
     	</div>

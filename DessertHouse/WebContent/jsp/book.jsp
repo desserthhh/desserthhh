@@ -35,7 +35,6 @@
 						if(type=="manager"){
 						%>
 						<li><a href="/MStores/allowplan.action">销售计划</a></li>
-						<li><a href="/MStores/count.jsp">统计图表</a></li>
 						<%
 						}
 						%>

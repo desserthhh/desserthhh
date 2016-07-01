@@ -285,7 +285,7 @@
                         <form action="/DessertHouse/card" method="post" id="contactform">
                             <p>
                             	<label for="name">登录密码</label>
-                            	<input type="text" name="password" class="input" >
+                            	<input type="password" name="password" class="input" >
                             </p>
                             <p>
                             	<label for="email">充值金额（RMB）</label>

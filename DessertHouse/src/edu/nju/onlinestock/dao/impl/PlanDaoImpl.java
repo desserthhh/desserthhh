@@ -98,9 +98,9 @@ public class PlanDaoImpl extends YeekuHibernateDaoSupport
 	}
 
 	String getNow(){
-		Date now = new Date();
-		DateFormat form = new SimpleDateFormat("yyyy-MM-dd "); 
-		String an = form.format(now);
+		//Date now = new Date();
+		//DateFormat form = new SimpleDateFormat("yyyy-MM-dd "); 
+		String an ="2016-06-30";
 		return an;
 	}
 
